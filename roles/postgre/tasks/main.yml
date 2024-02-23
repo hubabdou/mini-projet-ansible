@@ -1,0 +1,11 @@
+---
+- name: Instal  PostgreSQL
+  apt:
+    name: postgresql
+    state: present
+
+- name: Checking PostgreSQL status
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes

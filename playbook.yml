@@ -1,0 +1,17 @@
+- name: Update cache
+  hosts: all
+  become: yes
+  roles:
+    - update_ubuntu
+
+- name: Install PostgreSQL
+  hosts: dbserver
+  become: yes
+  roles:
+    - postgre
+
+- name: Install Apache2
+  hosts: webserver
+  become: yes
+  roles:
+    - apache2
